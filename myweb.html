@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>学术报告集合</title>
+    <style>
+
+    /* 基础页面样式 */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative; /* 关键：为伪元素定位做准备 */
+    }
+
+    /* 背景图 + 半透明遮罩 */
+    body::before {
+        content: "";
+        background-image: url('images/whu.jpg'); /* 替换为你的图片路径 */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* 固定背景不随滚动移动 */
+        opacity: 0.3; /* 图片透明度 0-1 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1; /* 确保背景在内容下层 */
+    }
+
+    /* 内容区域增强可读性 */
+    .report-item {
+        background-color: rgba(255, 255, 255, 0.85); /* 半透明白底 */
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影增强层次感 */
+    }
+
+    /* 其他原有样式保持不变... */
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .report-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>学术报告集合</h1>
+
+    <!-- 即将举行的报告 -->
+    <h2><svg class="header-icon" viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#3498db" opacity="0.9"/> <!-- 蓝色圆圈 -->
+    </svg> 即将举行</h2>
+    <div class="report-item">
+        <strong>报告1：人工智能前沿技术研讨会</strong><br>
+        - 时间：2024年6月15日 14:00<br>
+        - 地点：线上会议<br>
+        - <a href="https://www.bilibili.com/" target="_blank">查看详情</a>
+        - <a href="ppt/seminar1.pptx" class="download-btn" download>下载PPT</a>
+    </div>
+
+    <div class="report-item">
+        <strong>报告2：量子计算发展展望</strong><br>
+        - 时间：2024年7月2日 10:00<br>
+        - 地点：理科楼A201<br>
+        - <a href="https://www.bilibili.com/" target="_blank">查看详情</a>
+        - <a href="ppt/seminar2.pptx" class="download-btn" download>下载PPT</a>
+    </div>
+
+    <!-- 已经举行的报告 -->
+    <h2><svg class="header-icon" viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#2ecc71" opacity="0.9"/> <!-- 绿色圆圈 -->
+    </svg> 已经举行</h2>
+    <div class="report-item">
+        <strong>报告3：区块链技术应用案例</strong><br>
+        - 时间：2024年5月20日（已结束）<br>
+        - <a href="https://www.bilibili.com/" target="_blank">查看录像</a>
+        - <a href="ppt/seminar3.pptx" class="download-btn" download>下载PPT</a>
+    </div>
+
+    <div class="report-item">
+        <strong>报告4：生物信息学最新进展</strong><br>
+        - 时间：2024年4月10日（已结束）<br>
+        - <a href="https://www.bilibili.com/" target="_blank">查看录像</a>
+        - <a href="ppt/seminar4.pptx" class="download-btn" download>下载PPT</a>
+    </div>
+</body>
+</html>
