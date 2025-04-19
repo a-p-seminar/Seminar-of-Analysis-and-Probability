@@ -1,122 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>学术报告集合</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学术报告集合 - WHU</title>
     <style>
-
-    /* 基础页面样式 */
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        position: relative; /* 关键：为伪元素定位做准备 */
-    }
-
-    /* 背景图 + 半透明遮罩 */
-    body::before {
-        content: "";
-        background-image: url('images/whu.jpg'); /* 替换为你的图片路径 */
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* 固定背景不随滚动移动 */
-        opacity: 0.3; /* 图片透明度 0-1 */
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1; /* 确保背景在内容下层 */
-    }
-
-    /* 内容区域增强可读性 */
-    .report-item {
-        background-color: rgba(255, 255, 255, 0.85); /* 半透明白底 */
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影增强层次感 */
-    }
-
-    /* 其他原有样式保持不变... */
-
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --past-color: #95a5a6;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --card-hover-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            color: #333;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background: 
+                linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+                url('images/whu.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
         }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.5);
+            z-index: -1;
+        }
+        
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
         h1 {
-            color: #2c3e50;
+            color: var(--secondary-color);
             text-align: center;
-        }
-        h2 {
-            color: #3498db;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-        .report-item {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px 30px;
             border-radius: 5px;
         }
-        .download-btn {
+        
+        h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            font-size: 1.8em;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 8px 15px;
+            border-radius: 5px;
             display: inline-block;
-            background-color: #3498db;
+        }
+        
+        .reports-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .report-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+            backdrop-filter: blur(2px);
+        }
+        
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .report-card.upcoming {
+            border-left-color: var(--primary-color);
+        }
+        
+        .report-card.past {
+            border-left-color: var(--past-color);
+        }
+        
+        .report-title {
+            font-size: 1.3em;
+            margin: 0 0 15px 0;
+            color: var(--secondary-color);
+        }
+        
+        .report-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .report-meta i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .past .report-meta i {
+            color: var(--past-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
             color: white;
-            padding: 5px 10px;
+            padding: 8px 15px;
+            border-radius: 4px;
             text-decoration: none;
-            border-radius: 3px;
+            margin-top: 15px;
+            transition: background 0.3s;
+            font-size: 0.9em;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .past .btn {
+            background: var(--past-color);
+        }
+        
+        .past .btn:hover {
+            background: #7f8c8d;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-transform: uppercase;
             margin-left: 10px;
-            font-size: 14px;
         }
-        .download-btn:hover {
-            background-color: #2980b9;
+        
+        .upcoming-badge {
+            background: #e3f2fd;
+            color: var(--primary-color);
         }
+        
+        .past-badge {
+            background: #eceff1;
+            color: var(--past-color);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            height: 80px;
+            opacity: 0.9;
+        }
+
+        .buttons-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <h1>学术报告集合</h1>
+    <div class="content-wrapper">
+        <div class="logo">
+            <img src="images/whu.png" alt="WHU Logo">
+        </div>
+        
+        <h1>学术报告集合</h1>
+        
 
-    <!-- 即将举行的报告 -->
-    <h2><svg class="header-icon" viewBox="0 0 24 24" width="24" height="24">
-        <circle cx="12" cy="12" r="10" fill="#3498db" opacity="0.9"/> <!-- 蓝色圆圈 -->
-    </svg> 即将举行</h2>
-    <div class="report-item">
-        <strong>报告1：人工智能前沿技术研讨会</strong><br>
-        - 时间：2024年6月15日 14:00<br>
-        - 地点：线上会议<br>
-        - <a href="https://www.bilibili.com/" target="_blank">查看详情</a>
-        - <a href="ppt/seminar1.pptx" class="download-btn" download>下载PPT</a>
-    </div>
-
-    <div class="report-item">
-        <strong>报告2：量子计算发展展望</strong><br>
-        - 时间：2024年7月2日 10:00<br>
-        - 地点：理科楼A201<br>
-        - <a href="https://www.bilibili.com/" target="_blank">查看详情</a>
-        - <a href="ppt/seminar2.pptx" class="download-btn" download>下载PPT</a>
-    </div>
-
-    <!-- 已经举行的报告 -->
-    <h2><svg class="header-icon" viewBox="0 0 24 24" width="24" height="24">
-        <circle cx="12" cy="12" r="10" fill="#2ecc71" opacity="0.9"/> <!-- 绿色圆圈 -->
-    </svg> 已经举行</h2>
-    <div class="report-item">
-        <strong>报告3：区块链技术应用案例</strong><br>
-        - 时间：2024年5月20日（已结束）<br>
-        - <a href="https://www.bilibili.com/" target="_blank">查看录像</a>
-        - <a href="ppt/seminar3.pptx" class="download-btn" download>下载PPT</a>
-    </div>
-
-    <div class="report-item">
-        <strong>报告4：生物信息学最新进展</strong><br>
-        - 时间：2024年4月10日（已结束）<br>
-        - <a href="https://www.bilibili.com/" target="_blank">查看录像</a>
-        - <a href="ppt/seminar4.pptx" class="download-btn" download>下载PPT</a>
+        <h2>即将举行</h2>
+        <div class="reports-container">
+            <div class="report-card upcoming">
+                <h3 class="report-title">人工智能前沿技术研讨会 <span class="status-badge upcoming-badge">即将开始</span></h3>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2024年8月15日 14:00</span>
+                </div>
+                <div class="report-meta">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>线上会议</span>
+                </div>
+                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+            </div>
+            
+            <div class="report-card upcoming">
+                <h3 class="report-title">量子计算发展展望 <span class="status-badge upcoming-badge">即将开始</span></h3>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2024年7月2日 10:00</span>
+                </div>
+                <div class="report-meta">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>理科楼A201</span>
+                </div>
+                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+            </div>
+        </div>
+        
+        <h2>已经举行</h2>
+        <div class="reports-container">
+            <div class="report-card past">
+                <h3 class="report-title">区块链技术应用案例 <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2024年5月20日</span>
+                </div>
+                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+            </div>
+            
+            <div class="report-card past">
+                <h3 class="report-title">生物信息学最新进展 <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2024年4月10日</span>
+                </div>
+                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
