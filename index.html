@@ -172,7 +172,7 @@
         }
         
         .logo img {
-            height: 80px;
+            height: 180px;
             opacity: 0.9;
         }
 
@@ -180,6 +180,23 @@
             display: flex;
             gap: 10px;
             margin-top: 15px;
+        }
+        
+        /* 新增的报告人信息样式 */
+        .report-speaker {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .report-speaker i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .past .report-speaker i {
+            color: var(--past-color);
         }
         
     </style>
@@ -191,61 +208,179 @@
             <img src="images/whu.png" alt="WHU Logo">
         </div>
         
-        <h1>学术报告集合</h1>
+        <h1>Seminar on Analysis and Probability </h1>
         
 
-        <h2>即将举行</h2>
+        <div style="display: block; width: 100%;">
+            <h2>即将举行</h2>
+        </div>
+
         <div class="reports-container">
             <div class="report-card upcoming">
-                <h3 class="report-title">人工智能前沿技术研讨会 <span class="status-badge upcoming-badge">即将开始</span></h3>
+                <h3 class="report-title">A dimensional mass transference principle from balls to open sets and applications to dynamical Diophantine approximation <span class="status-badge upcoming-badge">即将开始</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人:何育彬（汕头大学）</span>
+                </div>
                 <div class="report-meta">
                     <i class="far fa-calendar-alt"></i>
-                    <span>2024年8月15日 14:00</span>
+                    <span>2025年08月30日 10:00--11:00</span>
                 </div>
                 <div class="report-meta">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>线上会议</span>
+                    <span>武汉大学雷军科技楼601报告</span>
                 </div>
-                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
-                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/138681.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
             </div>
             
-            <div class="report-card upcoming">
-                <h3 class="report-title">量子计算发展展望 <span class="status-badge upcoming-badge">即将开始</span></h3>
-                <div class="report-meta">
-                    <i class="far fa-calendar-alt"></i>
-                    <span>2024年7月2日 10:00</span>
-                </div>
-                <div class="report-meta">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>理科楼A201</span>
-                </div>
-                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
-                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
-            </div>
+            
         </div>
         
         <h2>已经举行</h2>
+
         <div class="reports-container">
+
             <div class="report-card past">
-                <h3 class="report-title">区块链技术应用案例 <span class="status-badge past-badge">已结束</span></h3>
+                <h3 class="report-title">分形发展的历史、现状和展望 <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: 文志英 教授（清华大学）</span>
+                </div>
                 <div class="report-meta">
                     <i class="far fa-calendar-alt"></i>
-                    <span>2024年5月20日</span>
+                    <span>2025年04月17日 </span>
                 </div>
-                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
-                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/135351.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
             </div>
-            
+
             <div class="report-card past">
-                <h3 class="report-title">Scales:dimensions for infinite dimensional spaces <span class="status-badge past-badge">已结束</span></h3>
+                <h3 class="report-title">Scales: dimensions for infinite dimensional spaces <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: Mathieu Helfter（维也纳大学）</span>
+                </div>
                 <div class="report-meta">
                     <i class="far fa-calendar-alt"></i>
-                    <span>2024年4月10日</span>
+                    <span>2025年04月10日 </span>
                 </div>
-                <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
-                <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/135021.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
             </div>
+
+            <div class="report-card past">
+                <h3 class="report-title">The Shrinking Target Problem: developing a manifold theory <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: Sanju Velani (York)</span>
+                </div>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2025年03月26日</span>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/134481.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
+            </div>
+
+            <div class="report-card past">
+                <h3 class="report-title">Ergodic theory of expanding Thurston maps and their subsystems <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: 时向辉(北京大学，北京国际数学研究中心)</span>
+                </div>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2025年03月18日 </span>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/131951.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
+            </div>
+
+            <div class="report-card past">
+                <h3 class="report-title">About the unit 1^1.2^2.3^3.4^4....((N-1)/2)^((N-1)/2) modulo a prime number N <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: Loïc Merel (Université Paris Cité)</span>
+                </div>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2025年03月14日 </span>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/132031.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
+            </div>
+
+            <div class="report-card past">
+                <h3 class="report-title">Strong positive recurrence and exponential mixing for smooth surface diffeomorphisms <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: Jérôme Buzzi(Université Paris-Saclay)</span>
+                </div>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2025年03月14日</span>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/132021.htm " class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
+            </div>
+
+            <div class="report-card past">
+                <h3 class="report-title">Harmonic Analysis of Multiplicative Chaos <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: 邱彦奇 研究员(国科大杭州高等研究院)</span>
+                </div>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2025年02月26日</span>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/131671.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
+            </div>
+
+            <div class="report-card past">
+                <h3 class="report-title">由动力系统与群作用定义的分形的维数理论一瞥 <span class="status-badge past-badge">已结束</span></h3>
+                <div class="report-speaker">
+                    <i class="fas fa-user-tie"></i>
+                    <span>报告人: 许地生 助理教授(大湾区大学)</span>
+                </div>
+                <div class="report-meta">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2025年02月25日</span>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://maths.whu.edu.cn/info/1115/131631.htm " class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
+                    <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
+                </div>
+            </div>
+
+        <div style="text-align: center; margin-top: 40px; font-size: 1.1em;">
+            <p>更早的信息请访问
+                <a href="https://perso.math.u-pem.fr/liao.lingmin/SAP-WH.html" 
+                   style="color: var(--primary-color); 
+                          text-decoration: none;
+                          font-weight: bold;"
+                   target="_blank">
+                   https://perso.math.u-pem.fr/liao.lingmin/SAP-WH.html
+                </a>
+            </p>
         </div>
     </div>
 </body>
