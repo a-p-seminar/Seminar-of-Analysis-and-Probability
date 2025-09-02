@@ -9,6 +9,7 @@
             --primary-color: #3498db;
             --secondary-color: #2c3e50;
             --past-color: #95a5a6;
+            --info-color: #9b59b6;
             --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
             --card-hover-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
@@ -48,7 +49,7 @@
         h1 {
             color: var(--secondary-color);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-size: 2.5em;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
@@ -66,6 +67,69 @@
             padding: 8px 15px;
             border-radius: 5px;
             display: inline-block;
+        }
+        
+        /* 新增信息卡片样式 */
+        .info-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px auto;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--info-color);
+            max-width: 900px;
+            backdrop-filter: blur(2px);
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .info-title {
+            font-weight: 600;
+            color: var(--info-color);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-title i {
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        
+        .info-content {
+            color: var(--secondary-color);
+            line-height: 1.5;
+        }
+        
+        .chinese {
+            font-weight: 500;
+        }
+        
+        .english {
+            color: #5c6b7e;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .email-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .email-link:hover {
+            color: #e74c3c;
+            text-decoration: underline;
         }
         
         .reports-container {
@@ -208,38 +272,62 @@
             <img src="images/whu.png" alt="WHU Logo">
         </div>
         
-        <h1>Seminar on Analysis and Probability </h1>
+        <h1>Seminar of Analysis and Probability </h1>
         
+        <!-- 新增的信息卡片 -->
+        <div class="info-card">
+            <div class="info-item">
+                <div class="info-title">
+                    <i class="fas fa-map-marker-alt"></i> 地点 / Venue
+                </div>
+                <div class="info-content">
+                    <div class="chinese">武汉大学,华中师范大学（轮流）</div>
+                    <div class="english">The talks will take place at Wuhan University and Central China Normal University in turn.</div>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-title">
+                    <i class="fas fa-users"></i> 组织者 / Organizers
+                </div>
+                <div class="info-content">
+                    <div class="chinese">范爱华，凡石磊，廖灵敏</div>
+                    <div class="english">
+                        Ai-Hua FAN (<a href="mailto:ai-hua.fan@u-picardie.fr" class="email-link">ai-hua.fan@u-picardie.fr</a>), 
+                        Shilei FAN (<a href="mailto:slfan@ccnu.edu.cn" class="email-link">slfan@ccnu.edu.cn</a>), 
+                        Lingmin LIAO (<a href="mailto:lmliao@whu.edu.cn" class="email-link">lmliao@whu.edu.cn</a>)
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div style="display: block; width: 100%;">
             <h2>即将举行</h2>
         </div>
 
         <div class="reports-container">
-            <div class="report-card upcoming">
-                <h3 class="report-title">A dimensional mass transference principle from balls to open sets and applications to dynamical Diophantine approximation <span class="status-badge upcoming-badge">即将开始</span></h3>
+           
+            
+            
+        </div>
+        
+        <h2>已经举行</h2>
+
+        <div class="report-card past">
+                <h3 class="report-title">A dimensional mass transference principle from balls to open sets and applications to dynamical Diophantine approximation <span class="status-badge past-badge">已结束</span></h3>
                 <div class="report-speaker">
                     <i class="fas fa-user-tie"></i>
                     <span>报告人:何育彬（汕头大学）</span>
                 </div>
                 <div class="report-meta">
                     <i class="far fa-calendar-alt"></i>
-                    <span>2025年08月30日 10:00--11:00</span>
-                </div>
-                <div class="report-meta">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>武汉大学雷军科技楼601报告</span>
+                    <span>2025年08月30日 </span>
                 </div>
                 <div class="buttons-group">
                     <a href="https://maths.whu.edu.cn/info/1115/138681.htm" class="btn btn-view"><i class="fas fa-eye"></i> 查看链接</a>
                     <a href="#" class="btn"><i class="fas fa-download"></i> 下载PPT</a>
                 </div>
             </div>
-            
-            
-        </div>
-        
-        <h2>已经举行</h2>
 
         <div class="reports-container">
             <div class="report-card past">
